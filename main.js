@@ -154,12 +154,98 @@ var arr2 = [
 arr2[2][0] = 10; // ეს არის მრავალგანზომილებიანი მასივი რომელიც შეიცავს მონაცემებს list-ის სახით და შეცვლის მასივის მნიშვნელობას
 console.log(arr2[0][1]);
 
+console.log(" ");
+
 //ციკლები
 //არის 3 ტიპის ციკლი for, while, Do while
 
+console.log("ციკლები");
+
 // for
+
+console.log("for");
 
 for (var i = 0; i < 10; i++) {
   //პირველი მიშვლენობა შექვმენით ცვლადი და მივანიჟეთ მნიშვლელობა. მიშვნელობა არ შეიძლება იყოს str ან bool. მეორე მიშვნელობა სამენ ეს მიშვნელობა იქნება true მაქამდე იმუშავებს ციკლი. მესამე მიშვნელობა როგორ უნდა შეიცვალოს i
-  console.log(i)
+  console.log(i);
+}
+
+console.log(" ");
+
+// while
+
+console.log("while");
+
+//ვაილში ჯერ უნდა შევქმენთ ცვლადი შემდეგ უნდა ეს ცვლადი გამოვიყენოთ თვითონ while ციკლში და while ციკლში მხოლოდ პირობას ვაძლევთ და თვითონ ციკლში ვწერთ როგორ შეიცვლება ცვლადი
+
+var j = 1000;
+
+while (j >= 100) {
+  console.log(j);
+  j -= 100;
+}
+
+//var ishashous = true
+// while(ishashous){//უსასრულო ციკლი
+
+// }
+
+console.log(" ");
+
+// Do while
+
+console.log("Do while");
+
+//იგივე while ციკლი მაგრამ თუ შემოწმება არასწორად დავწერეთ 1 იტერაციას მაინც მოახდენს~
+
+var x = 100;
+
+do {
+  console.log(x);
+} while (x < 50);
+
+console.log(" ");
+
+var y = 0;
+do {//აქ იწერება რას გააკეთებს ეს ციკლი
+  console.log(y);
+  y++;
+} while (y < 10);
+
+console.log(" ");
+
+// ციკლების ოპერატორები
+
+console.log("ციკლების ოპერატორები");
+
+console.log("პირველი ოპერატორი(break)");
+
+for (var i = 10; i <= 20; i += 2) {
+  if (i > 15) {
+    break; //ციკლიდან გამოსვლა
+  }
+  console.log(i);
+}
+
+console.log(" ");
+
+console.log("მეორე ოპერატორი(continue)");
+
+for (var i = 10; i <= 20; i++) {
+  if (i % 2 == 0) {
+    continue; //რამე იტერაციის გამოტოვება
+  }
+  console.log(i);
+}
+
+// ციკლები და მასივები(list)
+
+console.log(" ");
+
+console.log("ციკლები და მასივები(list)");
+
+var arr = [54, 123, 63, 134, "hi", true, 45, 34, 62, "hello world"];
+
+for (i = 0; i < arr.length; i++) {
+  console.log("element: " + (i + 1) + ": " + arr[i]);
 }
