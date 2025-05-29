@@ -28,6 +28,7 @@ const num2 = 5; // ეს არის ცვლადის შექმნა 
 console.log("variable: " + num2);
 
 console.log(" ");
+
 //მატემატიკური ოპერაციები
 console.log("მათემატიკური ოპერაციები");
 
