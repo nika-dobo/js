@@ -10,3 +10,5 @@ function assignRole(...users) {
 }
 
 console.log(assignRole({ name: "ანა" }, { name: "ნიკა" }));
+
+
