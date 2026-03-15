@@ -549,8 +549,8 @@ const box2 = document.querySelector(".box");
 const link = document.querySelector("#my-link");
 
 // ვიგებთ, სად მივყავართ ამ ბმულს
-const url = link.getAttribute("href");
-console.log(url); // დაიბეჭდება: "https://google.com"
+//const url = link.getAttribute("href");
+//console.log(url); // დაიბეჭდება: "https://google.com"
 
 //? 2) setAttribute(სახელი, ახალი_მნიშვნელობა)
 //? ეს მეთოდი პოულობს მახასიათებელს და უცვლის მას მნიშვნელობას. თუ ასეთი მახასიათებელი საერთოდ არ არსებობს, ის ახალს შექმნის.
@@ -561,10 +561,35 @@ console.log(url); // დაიბეჭდება: "https://google.com"
 const image = document.querySelector("#profile-pic");
 const btn = document.querySelector("#change-pic");
 
-btn.addEventListener("click", function () {
-  // ვცვლით 'src' მახასიათებელს ახალი სურათის ლინკით
-  image.setAttribute("src", "new-photo.jpg");
+// btn.addEventListener("click", function () {
+//   // ვცვლით 'src' მახასიათებელს ახალი სურათის ლინკით
+//   image.setAttribute("src", "new-photo.jpg");
 
-  // ვცვლით 'alt' ტექსტსაც
-  image.setAttribute("alt", "ახალი სურათი");
-});
+//   // ვცვლით 'alt' ტექსტსაც
+//   image.setAttribute("alt", "ახალი სურათი");
+// });
+
+// ----------------------------------------------
+//? api
+
+// ვქმნით ასინქრონულ ფუნქციას
+async function getUserData() {
+  try {
+    // 1. fetch-ით ვაგზავნით მოთხოვნას სერვერზე და ველოდებით (await) პასუხს
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users/1",
+    );
+
+    // 2. მოსულ პასუხს ვაქცევთ JSON ფორმატში, რათა JS-მა წაიკითხოს
+    const data = await response.json();
+
+    // 3. ვიყენებთ მონაცემებს (მაგალითად, ვბეჭდავთ კონსოლში მომხმარებლის სახელს)
+    console.log("მომხმარებლის სახელია:", data.name);
+  } catch (error) {
+    // 4. თუ რამე შეცდომა მოხდა (მაგ: ინტერნეტი გაითიშა), აქ ვიჭერთ
+    console.error("შეცდომა ინფორმაციის წამოღებისას:", error);
+  }
+}
+
+// ვიძახებთ ფუნქციას
+getUserData();
