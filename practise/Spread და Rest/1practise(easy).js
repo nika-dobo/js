@@ -5,3 +5,5 @@ let colors2 = ["ლურჯი", "ყვითელი"];
 
 let colors = [...colors1, ...colors2, "შავი"];
 console.log(colors);
+
+
